@@ -13,6 +13,7 @@
 
 
 
+
 #Selenium Web automation with Python
 #Install the Import Lib
 -Selenium ( > 4))
@@ -24,3 +25,9 @@
 -Openpyxl - CSV,Excel
 -Faker lib( Fake data generation)**
 #pip install selenium pytest pytest-html allure-pytest
+
+#How to Push the Git
+#git add .
+#git commit -m "Message"
+#git push
+#git pull ( if You have added somehting on github.com)
