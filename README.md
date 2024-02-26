@@ -31,3 +31,21 @@
 #git commit -m "Message"
 #git push
 #git pull ( if You have added somehting on github.com)
+
+#how to get the html and allure report
+pytest -s -v path>> report
+pytest -s -v Code/6_Jan_2024/test01_vwologin.py --html=report.html 
+pytest -s -v Code/6_Jan_2024/test01_vwologin.py--alluredir=./a llure-reports
+
+# dot env
+#pip install python-dotenv
+
+#syntex for Frequent wait
+
+#import os
+#from selenium.common.exceptions import (ElementNotVisibleException,
+                                        ElementNotSelectableException) 
+
+#ignore_list = [ElementNotVisibleException, ElementNotSelectableException]
+    #wait = WebDriverWait(driver, 40, poll_frequency=1, ignored_exceptions=ignore_list)
+    #element = EC.presence_of_element_located((By.CSS_SELECTOR,".aw-layout-locationTitle"))

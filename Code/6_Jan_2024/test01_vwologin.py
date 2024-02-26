@@ -5,16 +5,16 @@
 # Create a Report to send to QA Lead--HTML-->Allure Report
 
 
+import logging
+import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
-import logging
 
 
 def test_vwologin():
     LOGGER = logging.getLogger(__name__)
-    driver = webdriver.Chrome()
+    driver = webdriver.Edge()
     driver.maximize_window()
 
     # Open the browser
@@ -47,5 +47,10 @@ def test_vwologin():
 
     # There is a delay for 2-3 sec for this use below code
     time.sleep(5)
-    LOGGER.info("title is"+driver.title)
+    LOGGER.info("title is" + driver.title)
     assert "Dashboard" in driver.title
+
+    driver.refresh()
+    driver.get("https://sdet.live")
+    driver.back()
+    driver.forward()
