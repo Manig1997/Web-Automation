@@ -43,8 +43,7 @@ def test_open_login():
     role_change.click()
     time.sleep(10)
 
-    validation = driver.find_element(By.XPATH, "//span[normalize-space()='Purchasing.D-Factory.Gothenburg.SKF']")
-    for i in validation:
-        if i.text == "Purchasing.D-Factory.Gothenburg.SKF":
-            print(i.text)
+    validation = driver.find_element(By.XPATH, "//a[normalize-space()='Purchasing.D-Factory.Gothenburg.SKF']")
+
+    print(validation.text)
     time.sleep(10)

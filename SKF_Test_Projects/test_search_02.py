@@ -12,7 +12,8 @@ def test_open_login():
     driver.maximize_window()
     #driver.execute_script("document.body.style.zoom='100 %'")
     WebDriverWait(driver, 40).until(
-        EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".aw-layout-locationTitle"), "Teamcenter")
+        EC.visibility_of_element_located((By.CSS_SELECTOR,
+                                          "div[title='Folders'] div[class='aw-tile-iconContainer aw-layout-flexColumn sw-justify-center']"))
     )
 
     #Search button
@@ -22,10 +23,12 @@ def test_open_login():
     search_button.click()
 
     WebDriverWait(driver, 25).until(
-       EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div[class='aw-in-content-search-box aw-search-searchBox'] div[class='sw-search-iconContainer']"), "Category")
-    )
-    #search = driver.find_element(By.XPATH, "//div[@title='Category']")
-    #print(search.text)
-    #heading_element = driver.find_element(By.XPATH, "//div[@title='Category']")
-    #assert heading_element.text == os.getenv("Category")
-    #time.sleep(10)
+       EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class='aw-in-content-search-box aw-search-searchBox'] div[class='sw-search-iconContainer']")))
+
+    more_option = driver.find_element(By.XPATH, "//a[@aria-label='More...'][1]")
+    more_option.click()
+
+    category_list = driver.find_element(By.XPATH, "(//div[@class='sw-section sw-section-content sw-column'])[2]")
+    print(category_list.text)
+
+    time.sleep(10)
